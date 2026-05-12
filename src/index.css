@@ -1,0 +1,58 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+@theme {
+  --color-background: #0A0A0A;
+  --color-card: #1A1A1A;
+  --color-gold: #D4AF37;
+  
+  --font-playfair: "Playfair Display", serif;
+  --font-inter: "Inter", sans-serif;
+}
+
+:root {
+  --background: #0A0A0A;
+  --foreground: #FFFFFF;
+}
+
+.light {
+  --background: #F5F5F5;
+  --foreground: #0A0A0A;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair tracking-tight;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-black/40 backdrop-blur-md border border-white/10;
+  }
+  
+  .gold-gradient {
+    @apply bg-gradient-to-r from-gold via-[#F7E7CE] to-gold bg-clip-text text-transparent;
+  }
+  
+  .bento-card {
+    @apply relative overflow-hidden rounded-2xl bg-card border border-white/5 transition-all duration-500;
+  }
+}
+
+/* Custom Cursor */
+.custom-cursor {
+  @apply fixed top-0 left-0 w-8 h-8 border-2 border-gold rounded-full pointer-events-none z-[9999] mix-blend-difference transition-transform duration-200 ease-out;
+  transform: translate(-50%, -50%);
+}
+
+.custom-cursor-dot {
+  @apply fixed top-0 left-0 w-1 h-1 bg-gold rounded-full pointer-events-none z-[9999];
+  transform: translate(-50%, -50%);
+}
