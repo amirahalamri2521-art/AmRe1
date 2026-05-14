@@ -1,6 +1,6 @@
 import  { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, Clock, MapPin, Sparkles, Send } from 'lucide-react';
+import { Calendar, Clock, Sparkles, Send } from 'lucide-react';
 
 const WORKSHOPS = [
   {
